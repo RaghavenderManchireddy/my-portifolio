@@ -50,6 +50,7 @@ function StackDiagram() {
   return (
     <figure className="diagram">
       <figcaption><span className="diagram-dot" /> Full-stack architecture</figcaption>
+      <div className="terminal-bar" aria-hidden="true"><span /><span /><span /><code>enterprise-stack</code></div>
       <div className="diagram-flow">
         {layers.map(([Icon, label, tech]) => (
           <div className="diagram-row" key={label}>
