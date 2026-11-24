@@ -41,3 +41,39 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify the public portfolio
+        env:
+          PORTFOLIO_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import time
+          from urllib.parse import urljoin, urlsplit
+          from urllib.request import urlopen
+
+          url = os.environ["PORTFOLIO_URL"].rstrip("/") + "/"
+          for attempt in range(12):
+              try:
+                  with urlopen(url, timeout=15) as response:
+                      page = response.read().decode()
+                  if "Raghavender Reddy Manchireddy" not in page:
+                      raise ValueError("The public page is missing the portfolio title")
+                  assets = re.findall(r'(?:src|href)="([^"]+\.(?:js|css|svg))"', page)
+                  if {path.rsplit(".", 1)[-1] for path in assets} != {"js", "css", "svg"}:
+                      raise ValueError("The page is missing its script, stylesheet, or favicon")
+                  for path in assets:
+                      asset = urljoin(url, path)
+                      if urlsplit(asset).netloc != urlsplit(url).netloc:
+                          raise ValueError(f"Unexpected asset host: {asset}")
+                      with urlopen(asset, timeout=15) as response:
+                          if not response.read(1) or response.headers.get_content_type() == "text/html":
+                              raise ValueError(f"Invalid asset response: {asset}")
+                  print(f"Verified public page and {len(assets)} assets at {url}")
+                  break
+              except (OSError, ValueError) as error:
+                  print(f"Attempt {attempt + 1}: {error}", flush=True)
+                  if attempt == 11:
+                      raise
+                  time.sleep(5)
+          PY
