@@ -115,6 +115,8 @@ export const skills = [
   [
     "Artificial Intelligence",
     [
+      "Claude Code",
+      "GitHub Copilot",
       "Azure OpenAI",
       "Azure AI Foundry",
       "LLMs",
@@ -122,9 +124,7 @@ export const skills = [
       "Semantic Kernel",
       "Vector Embeddings",
       "AI Agents",
-      "MCP",
-      "Claude Code",
-      "GitHub Copilot"
+      "MCP"
     ]
   ],
   [
