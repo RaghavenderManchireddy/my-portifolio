@@ -64,10 +64,126 @@ export const projects = [
 ]
 
 export const skills = [
-  ['Backend & architecture', ['C#', '.NET', 'ASP.NET Core', 'EF Core', 'Microservices', 'Clean Architecture', 'REST APIs']],
-  ['Frontend', ['Angular', 'React', 'TypeScript', 'JavaScript', 'Blazor', 'RxJS', 'NgRx']],
-  ['Cloud & delivery', ['Microsoft Azure', 'AWS', 'Azure Functions', 'Azure APIM', 'Docker', 'Kubernetes', 'Azure DevOps']],
-  ['Data & messaging', ['SQL Server', 'Azure SQL', 'Oracle PL/SQL', 'PostgreSQL', 'Redis', 'Kafka', 'RabbitMQ', 'Azure Service Bus']],
-  ['AI & interoperability', ['Azure OpenAI', 'RAG', 'Semantic Kernel', 'FHIR R4', 'HL7', 'ANSI X12 EDI']],
-  ['Security & quality', ['OAuth 2.0', 'OpenID Connect', 'JWT', 'RBAC', 'Playwright', 'xUnit', 'NUnit', 'Moq']],
+  [
+    "Backend Engineering",
+    [
+      "C#",
+      ".NET",
+      "ASP.NET Core",
+      "REST APIs",
+      "Web API",
+      "EF Core",
+      "Dapper",
+      "LINQ",
+      "SignalR",
+      "CQRS",
+      "Microservices",
+      "Clean Architecture"
+    ]
+  ],
+  [
+    "Frontend Engineering",
+    [
+      "Angular",
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Blazor",
+      "Redux Toolkit",
+      "NgRx",
+      "RxJS",
+      "HTML5",
+      "CSS3",
+      "Telerik",
+      "Kendo UI"
+    ]
+  ],
+  [
+    "Cloud Engineering",
+    [
+      "Microsoft Azure",
+      "AWS",
+      "Azure Functions",
+      "Logic Apps",
+      "Azure APIM",
+      "App Services",
+      "Event Grid",
+      "Event Hubs",
+      "Key Vault"
+    ]
+  ],
+  [
+    "Artificial Intelligence",
+    [
+      "Azure OpenAI",
+      "Azure AI Foundry",
+      "LLMs",
+      "RAG",
+      "Semantic Kernel",
+      "Vector Embeddings",
+      "AI Agents",
+      "MCP",
+      "Claude Code",
+      "GitHub Copilot"
+    ]
+  ],
+  [
+    "Database Engineering",
+    [
+      "SQL Server",
+      "Azure SQL",
+      "Oracle PL/SQL",
+      "PostgreSQL",
+      "Redis",
+      "Cosmos DB",
+      "T-SQL",
+      "Query Optimization"
+    ]
+  ],
+  [
+    "DevOps & Infrastructure",
+    [
+      "Docker",
+      "Kubernetes",
+      "Azure DevOps",
+      "GitHub Actions",
+      "CI/CD",
+      "AKS",
+      "Terraform",
+      "Bicep",
+      "SonarQube"
+    ]
+  ],
+  [
+    "Security & Quality",
+    [
+      "OAuth 2.0",
+      "OpenID Connect",
+      "JWT",
+      "RBAC",
+      "Entra ID",
+      "SAML SSO",
+      "Playwright",
+      "xUnit",
+      "NUnit",
+      "Moq"
+    ]
+  ],
+  [
+    "Enterprise Integration & Accessibility",
+    [
+      "Kafka",
+      "RabbitMQ",
+      "Azure Service Bus",
+      "FHIR R4",
+      "HL7",
+      "ANSI X12 EDI",
+      "FACETS",
+      "WCAG",
+      "Section 508",
+      "NVDA",
+      "WAVE",
+      "axe DevTools"
+    ]
+  ]
 ]
