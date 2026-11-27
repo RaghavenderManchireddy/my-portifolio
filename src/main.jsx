@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import { experience, profile, projects, skills } from './content'
 import './styles.css'
+import NeuralScene from './NeuralScene'
 
 const navigation = [
   ['About', 'about'], ['Work', 'projects'], ['Experience', 'experience'],
@@ -40,7 +41,7 @@ function Header() {
   )
 }
 
-function StackDiagram() {
+export function StackDiagram() {
   const layers = [
     [Layers3, 'Interface', 'Angular · React'],
     [Braces, 'Application', 'C# · ASP.NET Core'],
@@ -69,13 +70,13 @@ function Hero() {
       <div className="hero-copy">
         <p className="eyebrow role"><span />{profile.title}</p>
         <h1 id="hero-title">Raghavender Reddy <em>Manchireddy</em></h1>
-        <p className="hero-description">I modernize legacy .NET applications and build cloud systems for government, healthcare, and financial services.</p>
+        <p className="hero-description">Engineering intelligence: I modernize legacy .NET applications and build cloud systems for government, healthcare, and financial services.</p>
         <div className="actions">
           <a className="button primary" href="#projects">Explore my work <ArrowDownRight size={18} /></a>
           <a className="button secondary" href="#contact">Contact me <ArrowUpRight size={17} /></a>
         </div>
       </div>
-      <StackDiagram />
+      <NeuralScene />
       <div className="hero-foot">
         <span><strong>12+</strong> years in software delivery</span>
         <span><strong>5</strong> enterprise client engagements</span>
