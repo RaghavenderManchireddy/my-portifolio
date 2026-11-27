@@ -190,3 +190,21 @@ h1 em { color: #9ac5ff; background: linear-gradient(100deg,#67e8f9,#a78bfa); bac
 .motion-paused *{animation-play-state:paused!important}
 @media(prefers-reduced-motion:reduce){.skill-universe *{animation:none!important}}
 @media(max-width:720px){.skill-universe{grid-template-columns:minmax(0,1fr);padding:.7rem;gap:1rem}.skill-readout{padding:1rem}}
+
+/* Stacked reference-style neural modules */
+.neural-modules{display:grid;gap:12px;margin-top:1.5rem}
+.neural-modules .skill-motion{grid-column:auto}
+.neural-module{position:relative;isolation:isolate;overflow:hidden;border:1px solid #304c78;border-radius:16px;background:#0b1426;padding:18px;transition:border-color .2s,box-shadow .2s}
+.neural-module::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 30%,#2563eb12 48%,#8b5cf610 52%,transparent 70%);background-size:250% 100%;animation:neural-sweep 9s linear infinite}
+@keyframes neural-sweep{from{background-position:100% 0}to{background-position:-150% 0}}
+.neural-module:hover{border-color:#67e8f9;box-shadow:0 0 24px #2563eb25}
+.neural-module-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.neural-module-icon{width:54px;height:54px;flex:none;display:grid;place-items:center;border-radius:12px;background:#17365b;color:#67e8f9;animation:core-pulse 4s ease-in-out infinite alternate}
+.neural-module-label{font-size:.85rem;color:#93c5fd;margin:0 0 4px;letter-spacing:.04em}
+.neural-module-header h3{margin:0;font-size:1.25rem;color:#f1f5f9}
+.neural-module-tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
+.neural-module-tags li{border:1px solid #304c78;background:#142749;color:#bfdbfe;border-radius:9px;padding:6px 9px;font-size:.88rem;line-height:1.4;transition:background .2s,border-color .2s}
+.neural-module-tags li:hover{background:#17365b;border-color:#67e8f9}
+@media(prefers-reduced-motion:reduce){.neural-module::before,.neural-module-icon{animation:none!important}}
+.motion-paused .neural-module::before{animation-play-state:paused}
+@media(max-width:600px){.neural-module{padding:13px}.neural-module-icon{width:44px;height:44px}.neural-module-header h3{font-size:1.1rem}}
