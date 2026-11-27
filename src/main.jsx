@@ -8,6 +8,7 @@ import {
 import { experience, profile, projects, skills } from './content'
 import './styles.css'
 import NeuralScene from './NeuralScene'
+import SkillUniverse from './SkillUniverse'
 
 const navigation = [
   ['About', 'about'], ['Work', 'projects'], ['Experience', 'experience'],
@@ -177,7 +178,8 @@ function App() {
         <Experience />
         <section id="skills" className="work-band">
           <div className="wrap section">
-            <SectionHeading label="Technical skills" title="Technology stack" />
+            <SectionHeading label="Technical skills / Neural universe" title="Connected intelligence">Explore my technology stack through an interactive neural network.</SectionHeading>
+            <SkillUniverse />
             <div className="skills-grid">
               {skills.map(([category, items]) => (
                 <article key={category} className="skill-card">
