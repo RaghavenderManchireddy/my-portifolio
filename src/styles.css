@@ -173,3 +173,20 @@ h1 em { color: #9ac5ff; background: linear-gradient(100deg,#67e8f9,#a78bfa); bac
 .timeline > li::before { box-shadow:0 0 15px #22d3ee; }
 .timeline { border-image:linear-gradient(#22d3ee,#8b5cf6) 1; }
 @media (max-width:720px) { .hero { grid-template-columns:minmax(0,1fr); min-height:0; } .neural-scene { min-height:320px; } }
+
+.skill-universe{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:2rem;margin-top:2rem;padding:1.5rem;border:1px solid #304c78;border-radius:20px;background:radial-gradient(ellipse at 25% 50%,#19346b88,transparent 65%),#080f20;overflow:hidden}
+.skill-orbit{position:relative;aspect-ratio:1;width:100%;max-width:490px;margin:auto}
+.orbit-ring{position:absolute;inset:14%;border:1px dashed #60a5fa77;border-radius:50%;animation:orbit-spin 30s linear infinite;pointer-events:none}
+.ring-two{inset:25%;border-color:#a78bfa88;animation-direction:reverse}
+@keyframes orbit-spin{to{transform:rotate(360deg)}}
+.orbit-core{position:absolute;inset:35%;border:1px solid #67e8f9;border-radius:50%;display:grid;place-content:center;text-align:center;background:#10264b;box-shadow:0 0 35px #2563eb88;z-index:1;animation:core-pulse 3s ease-in-out infinite alternate}
+.orbit-core strong{font-size:clamp(1.4rem,4vw,2.5rem);color:#a5f3fc}.orbit-core small{font: .52rem monospace;color:#bfdbfe}
+@keyframes core-pulse{to{box-shadow:0 0 55px #8b5cf688}}
+.orbit-links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.orbit-links line{stroke:#34568a;stroke-width:1.5;stroke-dasharray:5 8;animation:signal-flow 2s linear infinite}.orbit-links line.active{stroke:#67e8f9;stroke-width:3}
+@keyframes signal-flow{to{stroke-dashoffset:-26}}
+.orbit-node{position:absolute;transform:translate(-50%,-50%);width:clamp(75px,24%,115px);min-height:52px;padding:.4rem;border:1px solid #456ca1;border-radius:10px;background:#101e39;color:#dbeafe;font-size:clamp(.62rem,1.5vw,.8rem);font-weight:650;cursor:pointer;z-index:2;line-height:1.2}
+.orbit-node span{display:block;color:#93c5fd;font: .65rem monospace;margin-bottom:.2rem}.orbit-node[aria-pressed=true]{border-color:#67e8f9;box-shadow:0 0 22px #22d3ee55;background:#17365b}
+.skill-readout{padding:1.5rem;border:1px solid #34568a;border-radius:14px;background:#0b1426dd;min-width:0}.skill-readout h3{font-size:1.8rem;margin-top:.6rem}.skill-hint{color:#a8b7ce;font-size:.85rem;margin-top:1rem}.skill-motion{grid-column:1/-1;justify-self:end;border:1px solid #456ca1;border-radius:6px;padding:.5rem .8rem;cursor:pointer;color:#bfdbfe}
+.motion-paused *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.skill-universe *{animation:none!important}}
+@media(max-width:720px){.skill-universe{grid-template-columns:minmax(0,1fr);padding:.7rem;gap:1rem}.skill-readout{padding:1rem}}
