@@ -5,7 +5,7 @@ import {
   Cloud, CodeXml, CreditCard, Database, GitFork, GraduationCap, HeartPulse,
   Landmark, Layers3, BriefcaseBusiness, Mail, Menu, X,
 } from 'lucide-react'
-import { experience, profile, projects, skills } from './content'
+import { experience, profile, projects } from './content'
 import './styles.css'
 import NeuralScene from './NeuralScene'
 import SkillUniverse from './SkillUniverse'
@@ -178,16 +178,9 @@ function App() {
         <Experience />
         <section id="skills" className="work-band">
           <div className="wrap section">
-            <SectionHeading label="Technical skills / Neural universe" title="Connected intelligence">Explore my technology stack through an interactive neural network.</SectionHeading>
+            <SectionHeading label="Technical skills / Neural universe" title="Connected intelligence">Explore my technology stack across eight specialized engineering modules.</SectionHeading>
             <SkillUniverse />
-            <div className="skills-grid">
-              {skills.map(([category, items]) => (
-                <article key={category} className="skill-card">
-                  <h3>{category}</h3>
-                  <ul className="tags">{items.map((item) => <li key={item}>{item}</li>)}</ul>
-                </article>
-              ))}
-            </div>
+
           </div>
         </section>
         <section className="wrap section split" id="education">
